@@ -16,7 +16,9 @@ return new class extends Migration
             $table->integer('tenant_id');
             $table->string('first_name',50);
             $table->string('last_name',50);
+            $table->date('date_of_birth');
             $table->string('grade',50);
+            
             $table->timestamp('created_at')->useCurrent();
         });
     }

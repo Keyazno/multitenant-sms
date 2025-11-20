@@ -1,4 +1,3 @@
-import appLayout from "@/layouts/app-layout";
 import { type BreadcrumbItem } from "@/types";
 import {usePage,router} from "@inertiajs/react";
 import {Card}from"@/components/ui/card";
@@ -102,18 +101,23 @@ export default function TeacherIndex() {
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">
                             <tr>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">First Name</th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Name</th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subject</th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
+
                                 <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
                             {teachers.map((teacher) => (
                                 <tr key={teacher.teacher_id}>
+                                    <td className="px-6 py-4 whitespace-nowrap">{teacher.teacher_id}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">{teacher.first_name}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">{teacher.last_name}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">{teacher.subject}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap">{teacher.phone}</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-right">
                                         <Button
                                             onClick={() => openEditDialog(teacher)}

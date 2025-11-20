@@ -12,10 +12,15 @@ class Student extends Model
     use HasFactory;
     public $timestamps = false;
     protected $primaryKey = 'student_id';
+    protected $casts = [
+        'date_of_birth' => 'datetime:Y-m-d',
+    ];
     protected $fillable = [
         'tenant_id',
         'first_name',
         'last_name',
+        'date_of_birth',
         'grade',
+        'phone',
     ];
 }
