@@ -35,7 +35,7 @@ const emptyForm: Teacher = {
 };
 type FormState = typeof emptyForm | (Teacher & { tenant_id: number });
 export default function TeacherIndex() {
-    const { teachers } = usePage().props as unknown as { teachers: Teacher[] };
+    const { teachers } = usePage<{ teachers: Teacher[] }>().props;
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [formState, setFormState] = useState<FormState>(emptyForm);
     const [isEditMode, setIsEditMode] = useState(false);
@@ -203,4 +203,4 @@ export default function TeacherIndex() {
             </div>
         </AppLayout>
     );
-}import { Head } from '@inertiajs/react';
+}

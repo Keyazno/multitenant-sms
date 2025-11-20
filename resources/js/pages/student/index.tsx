@@ -33,12 +33,12 @@ const emptyForm: Student = {
     last_name: "",
     date_of_birth: "",
     grade: "",
-    phone: "",
+    phone: "",  
     tenant_id: 0
 };
 type FormState = typeof emptyForm | (Student & { tenant_id: number });
 export default function StudentIndex() {
-    const { students } = usePage().props as unknown as { students: Student[] };
+    const { students } = usePage<{ students: Student[] }>().props;
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [formState, setFormState] = useState<FormState>(emptyForm);
     const [isEditMode, setIsEditMode] = useState(false);
